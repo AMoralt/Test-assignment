@@ -2,11 +2,11 @@ namespace Test_assignment;
 
 public class ExchangeRateProvider : IExchangeRateProvider
 {
-    private readonly Dictionary<string, decimal> _exchangeRateDictionary;
+    private readonly IDictionary<string, decimal> _exchangeRateDictionary;
 
-    public ExchangeRateProvider(Dictionary<string, decimal> exchangeRateDictionary)
+    public ExchangeRateProvider(IExchangeRateFactory exchangeRateFactory)
     {
-        _exchangeRateDictionary = exchangeRateDictionary;
+        _exchangeRateDictionary = exchangeRateFactory.CreateExchangeRates();
     }
 
     public decimal GetExchangeRate(string fromCurrency, string toCurrency)
@@ -18,7 +18,7 @@ public class ExchangeRateProvider : IExchangeRateProvider
             return rate;
         }
 
-        // Если нет прямого курса, пробуем через USD
+        // Попытка кросс-курса через USD
         string conversionViaUsdKey1 = $"{fromCurrency}->USD";
         string conversionViaUsdKey2 = $"USD->{toCurrency}";
 
