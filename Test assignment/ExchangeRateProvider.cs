@@ -28,6 +28,6 @@ public class ExchangeRateProvider : IExchangeRateProvider
             return rateToUsd * rateFromUsdToTarget;
         }
 
-        throw new Exception("Курс валюты не найден.");
+        throw new NoExchangeRateException("Курс валюты не найден.");
     }
 }
