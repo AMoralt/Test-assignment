@@ -1,6 +1,6 @@
-using System.Collections.Concurrent;
+using Test_assignment.Interfaces;
 
-namespace Test_assignment;
+namespace Test_assignment.Implementations;
 
 public class ExchangeRateFactory : IExchangeRateFactory
 {

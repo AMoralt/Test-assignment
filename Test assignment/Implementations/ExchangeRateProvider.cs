@@ -1,4 +1,7 @@
-namespace Test_assignment;
+using Test_assignment.Exceptions;
+using Test_assignment.Interfaces;
+
+namespace Test_assignment.Implementations;
 
 public class ExchangeRateProvider : IExchangeRateProvider
 {

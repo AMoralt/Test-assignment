@@ -1,4 +1,6 @@
-namespace Test_assignment;
+using Test_assignment.Models;
+
+namespace Test_assignment.Interfaces;
 
 public interface IMoneyOperations
 {

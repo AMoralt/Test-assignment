@@ -1,4 +1,4 @@
-namespace Test_assignment;
+namespace Test_assignment.Interfaces;
 
 public interface IExchangeRateFactory
 {
